@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1C2452">
+<title>Webly | تصميم مواقع بالذكاء الاصطناعي</title>
+<meta name="description" content="نصمم مواقع احترافية للمطاعم والمحلات والعيادات باستخدام الذكاء الاصطناعي. سريعة، تشتغل على الموبايل، ومربوطة بواتساب.">
+<meta property="og:title" content="Webly | تصميم مواقع بالذكاء الاصطناعي">
+<meta property="og:description" content="مواقع احترافية للمطاعم والمحلات والعيادات، بأسعار تناسب مشروعك.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231C2452'/%3E%3Cpolyline points='7,10 12,23 16,15 20,23 25,10' fill='none' stroke='%238FDCCB' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap">
+<style>
+:root{
+  --navy:#1C2452; --navy-2:#2A3466; --teal:#6FD3BC; --teal-light:#8FDCCB; --teal-dark:#1B7A67;
+  --mint:#DDF3EC; --mint-bg:#EAF7F3; --muted:#44507A; --line:#D5DFE8; --bg:#F7FAF9; --soft:#C9D2EA;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:'Cairo',system-ui,sans-serif;color:var(--navy);background:var(--bg);line-height:1.7}
+a{color:inherit}
+[hidden]{display:none !important}
+:focus-visible{outline:3px solid var(--teal-dark);outline-offset:2px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3,p{margin:0}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;line-height:1.3}
+h3{font-size:20px;font-weight:700}
+.lead{font-size:17px;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:8px}
+.section{padding:72px 0}
+.white{background:#fff}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;border:2px solid transparent;font-family:inherit;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer}
+.btn-primary{background:var(--teal);color:var(--navy)}
+.btn-outline{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-lg{min-height:52px;padding:0 28px;font-size:17px}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:20px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:44px;height:44px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:26px;height:26px;fill:none;stroke:var(--teal-light);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.logo-text{font-weight:800;font-size:24px}
+.switch{display:inline-flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:var(--mint-bg);border:1px solid #BFE6DB}
+.switch button{min-height:44px;padding:0 16px;border:0;border-radius:999px;background:transparent;color:var(--navy);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+/* hero */
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:48px;padding:40px 0 72px}
+.hero-text{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.pill{display:inline-block;padding:6px 16px;border-radius:999px;background:var(--mint);font-size:15px;font-weight:600}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.25;font-weight:800}
+h1 em{font-style:normal;color:var(--teal-dark)}
+.hero-sub{font-size:18px;color:var(--muted);max-width:520px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.mock-wrap{flex:1 1 380px;min-width:0;display:flex;justify-content:center}
+.mock{width:100%;max-width:480px;background:var(--navy);border-radius:20px;padding:14px;box-shadow:0 24px 48px rgba(28,36,82,.2)}
+.dots{display:flex;gap:6px;padding:4px 6px 12px}
+.dots i{display:block;width:10px;height:10px;border-radius:50%;background:#5B6798}
+.dots i:first-child{background:var(--teal-light)}
+.screen{background:#fff;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.sk-nav{display:flex;align-items:center;justify-content:space-between}
+.sk-nav b{display:block;width:22px;height:22px;border-radius:50%;background:var(--navy)}
+.sk-nav div{display:flex;gap:8px}
+.sk-nav span{display:block;width:28px;height:6px;border-radius:3px;background:var(--line)}
+.sk-hero{background:var(--mint);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.sk-hero i{display:block;border-radius:6px}
+.sk-cards{display:flex;gap:10px}
+.sk-cards i{flex:1;height:64px;background:#F1F4F8;border-radius:8px}
+.sk-wa{height:40px;border-radius:999px;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+
+/* bands */
+.audience{background:var(--mint-bg)}
+.audience .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;padding-top:32px;padding-bottom:32px}
+.audience strong{font-size:17px;margin-inline-end:8px}
+.tag{padding:8px 18px;border-radius:999px;background:#fff;border:1px solid #BFE6DB;font-size:16px;font-weight:600}
+
+/* feature + step cards */
+.grid{display:flex;flex-wrap:wrap;gap:20px}
+.feat-card{flex:1 1 240px;min-width:0;border:1px solid #E3EAF0;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.feat-card p,.step p{font-size:15px;color:var(--muted)}
+.ic{width:48px;height:48px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center}
+.ic svg{width:24px;height:24px;fill:none;stroke:var(--navy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.step{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.num{width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800}
+
+/* packages */
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:40px}
+.sw-line{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:8px}
+.sw-line span{font-size:16px;font-weight:600}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:1 1 300px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:20px}
+.card h3{font-size:22px;font-weight:800}
+.card .sub{font-size:15px;color:var(--muted)}
+.badge{align-self:flex-start;padding:4px 14px;border-radius:999px;background:var(--teal);color:var(--navy);font-size:14px;font-weight:700}
+.price{display:flex;flex-direction:column;gap:2px}
+.usd{font-size:40px;font-weight:800;line-height:1.2;text-align:right}
+.local{font-size:15px;color:var(--muted)}
+.feat{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;flex:1}
+.feat li{display:flex;align-items:flex-start;gap:10px;font-size:16px}
+.feat svg,.sum-feat svg{flex-shrink:0;width:20px;height:20px;margin-top:5px;fill:none;stroke:var(--teal-dark);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.note{padding:14px 16px;border-radius:12px;background:var(--mint-bg);font-size:15px;line-height:1.8}
+.card.featured{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.featured .sub,.card.featured .local{color:var(--soft)}
+.card.featured .usd{color:var(--teal-light)}
+.card.featured .feat svg{stroke:var(--teal-light)}
+.card.featured .note{background:var(--navy-2)}
+
+/* order */
+.order-grid{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;margin-top:32px}
+.panel{flex:1 1 420px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:24px}
+.field{display:flex;flex-direction:column;gap:8px}
+.label{font-size:15px;font-weight:700}
+.label small{font-weight:600;color:var(--muted);font-size:15px}
+input,textarea{width:100%;min-height:48px;border:1px solid #BFCAD6;border-radius:12px;padding:0 14px;font-family:inherit;font-size:16px;color:var(--navy);background:#fff}
+textarea{padding:12px 14px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 18px;display:inline-flex;align-items:center;gap:8px;border:1px solid #BFCAD6;border-radius:999px;background:#fff;color:var(--navy);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--mint);border-color:var(--teal-dark)}
+.chip.pk{border-color:var(--navy);font-weight:700}
+.chip.pk[aria-pressed="true"]{background:var(--navy);color:#fff}
+.chip .pr{color:var(--teal-dark);font-weight:700}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{width:44px;height:44px;border-radius:50%;padding:0;border:3px solid var(--line);cursor:pointer}
+.sw[aria-pressed="true"]{border-color:var(--teal-dark);outline:2px solid var(--teal-dark);outline-offset:2px}
+.summary{flex:1 1 320px;min-width:0;background:var(--navy);color:#fff;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:20px}
+.summary .k{font-size:14px;color:var(--soft)}
+.summary h3{font-size:24px;font-weight:800}
+.sum-feat{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.sum-feat li{display:flex;align-items:flex-start;gap:10px;font-size:15px}
+.sum-feat svg{width:18px;height:18px;stroke:var(--teal-light)}
+.lines{border-top:1px solid #3A4575;padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.line{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:15px;color:var(--soft)}
+.total{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:8px}
+.total b{font-size:16px}
+.total .amt{display:flex;flex-direction:column;align-items:flex-end}
+.total .amt strong{font-size:34px;font-weight:800;color:var(--teal-light);line-height:1.2}
+.total .amt span{font-size:14px;color:var(--soft)}
+
+/* payments */
+.pay{background:var(--mint-bg)}
+.pay-card{flex:1 1 200px;min-width:0;background:#fff;border:1px solid #BFE6DB;border-radius:16px;padding:20px;display:flex;align-items:center;gap:14px}
+.pay-ic{width:48px;height:48px;flex-shrink:0;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.pay-ic svg{width:24px;height:24px;fill:none;stroke:var(--teal-light);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pay-card strong{display:block;font-size:18px}
+.pay-card span{display:block;font-size:14px;color:var(--muted);text-align:right}
+
+/* cta + footer */
+.cta{background:var(--navy);color:#fff}
+.cta .container{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;padding-top:80px;padding-bottom:80px}
+.cta h2{font-size:clamp(28px,4.5vw,42px)}
+.cta p{font-size:18px;color:var(--soft);max-width:520px}
+.cta .ig{font-size:16px;color:var(--teal-light);font-weight:600;text-decoration:none}
+.foot{border-top:1px solid #3A4575;background:var(--navy);color:var(--soft);font-size:14px}
+.foot .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding-top:20px;padding-bottom:20px}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="top">
+    <a class="logo" href="#top" aria-label="Webly">
+      <span class="logo-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><polyline points="4,9 11,24 16,14 21,24 28,9"></polyline></svg></span>
+      <span class="logo-text" dir="ltr">Webly</span>
+    </a>
+    <div class="switch js-switch" role="group" aria-label="اختيار الدولة"></div>
+    <a class="btn btn-primary js-wa" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+      <span>تواصل معنا</span>
+    </a>
+  </header>
+</div>
+
+<main id="top">
+
+<section class="container hero">
+  <div class="hero-text">
+    <span class="pill">تصميم مواقع بالذكاء الاصطناعي</span>
+    <h1>موقعك الإلكتروني <em>جاهز بسرعة</em>، وبسعر يناسب مشروعك</h1>
+    <p class="hero-sub">نصمم مواقع احترافية للمطاعم والمحلات والعيادات باستخدام الذكاء الاصطناعي. سريعة، تشتغل على الموبايل، ومربوطة بواتساب.</p>
+    <div class="row">
+      <a class="btn btn-primary btn-lg js-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+        <span>اطلب موقعك عبر واتساب</span>
+      </a>
+      <a class="btn btn-outline btn-lg" href="#packages">شوف الباقات</a>
+    </div>
+  </div>
+  <div class="mock-wrap" aria-hidden="true">
+    <div class="mock">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <div class="screen">
+        <div class="sk-nav"><b></b><div><span></span><span></span><span></span></div></div>
+        <div class="sk-hero">
+          <i style="height:12px;width:70%;background:#1C2452"></i>
+          <i style="height:8px;width:50%;background:#8FA0C0;border-radius:4px"></i>
+          <i style="height:28px;width:96px;background:#6FD3BC;border-radius:999px;margin-top:6px"></i>
+        </div>
+        <div class="sk-cards"><i></i><i></i><i></i></div>
+        <div class="sk-wa">اطلب عبر واتساب</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="audience">
+  <div class="container">
+    <strong>نصمم مواقع لـ</strong>
+    <span class="tag">مطاعم</span><span class="tag">كافيهات</span><span class="tag">صيدليات</span><span class="tag">عيادات</span><span class="tag">محلات</span><span class="tag">مكاتب وشركات</span>
+  </div>
+</section>
+
+<section class="section white" id="features">
+  <div class="container">
+    <div class="sec-head">
+      <h2>ليش Webly؟</h2>
+      <p class="lead">نستخدم الذكاء الاصطناعي حتى نختصر عليك الوقت والتكلفة، بدون ما نضحي بجودة التصميم.</p>
+    </div>
+    <div class="grid">
+      <div class="feat-card">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span>
+        <h3>يشتغل على الموبايل</h3>
+        <p>أغلب زبائنك يتصفحون من الموبايل، لذلك نصمم الموقع ليظهر بشكل مرتب على كل الشاشات.</p>
+      </div>
+      <div class="feat-card">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg></span>
+        <h3>مربوط بواتساب</h3>
+        <p>زر طلب مباشر يوصّل الزبون لواتسابك بضغطة وحدة، بدون تعقيد.</p>
+      </div>
+      <div class="feat-card">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
+        <h3>تسليم سريع</h3>
+        <p>بدل ما تنتظر أسابيع، نبني ونعدل الموقع بسرعة بمساعدة الذكاء الاصطناعي.</p>
+      </div>
+      <div class="feat-card">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line></svg></span>
+        <h3>دعم بعد التسليم</h3>
+        <p>إذا احتجت تعديل نص أو صورة أو أي مساعدة، نكون موجودين.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="steps">
+  <div class="container">
+    <div class="sec-head"><h2>شلون نشتغل؟</h2></div>
+    <div class="grid">
+      <div class="step"><span class="num">1</span><h3>تراسلنا على واتساب</h3><p>تخبرنا باسم مشروعك ونوع نشاطك وشنو تحتاج بالموقع.</p></div>
+      <div class="step"><span class="num">2</span><h3>نصمم لك الموقع</h3><p>نبني التصميم بهوية مشروعك، وتشوفه وتكتب ملاحظاتك عليه.</p></div>
+      <div class="step"><span class="num">3</span><h3>نسلّمك الموقع</h3><p>بعد ما تعتمده ننشره على رابط خاص بمشروعك ويصير جاهز لزبائنك.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="packages">
+  <div class="container">
+    <div class="sec-head">
+      <h2>الباقات</h2>
+      <p class="lead">أسعار رمزية تناسب المشاريع الصغيرة والبدايات. السعر بالدولار، وبعملة بلدك تقريبي حسب سعر الصرف.</p>
+      <div class="sw-line"><span>اختار دولتك لتشوف الأسعار بعملتك:</span><div class="switch js-switch" role="group" aria-label="اختيار الدولة"></div></div>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<section class="section" id="order" hidden aria-labelledby="order-title">
+  <div class="container" id="order-body"></div>
+</section>
+
+<section class="section pay" id="payment">
+  <div class="container">
+    <div class="sec-head">
+      <h2>طرق الدفع</h2>
+      <p class="lead">ادفع بالطريقة اللي تناسبك. ننسّق معك تفاصيل الدفع بعد تأكيد الطلب.</p>
+    </div>
+    <div class="grid" id="pay-body"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>جاهز نبدأ موقعك؟</h2>
+    <p>راسلنا على واتساب وخبرنا عن مشروعك، ونرتب لك التفاصيل.</p>
+    <a class="btn btn-primary btn-lg js-wa" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+      <span>ابدأ عبر واتساب</span>
+    </a>
+    <a class="ig" href="https://instagram.com/webly.ig" target="_blank" rel="noopener">أو تابعنا على إنستغرام <span dir="ltr">@webly.ig</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <span dir="ltr">© 2026 Webly</span>
+    <span>واتساب: <span dir="ltr" id="foot-wa"></span></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============ الإعدادات (عدّلها من هنا) ============ */
+  var CONFIG = {
+    // رابط Google Apps Script لاستقبال الطلبات في Google Sheet. اتركه فارغاً لحد ما نجهزه.
+    sheetUrl: '',
+    countries: [
+      { id: 'iq', name: 'العراق', cur: 'د.ع', wa: '9647868463767', shown: '+964 786 846 3767', rate: 1512, step: 500, active: true,
+        pay: [
+          { name: 'زين كاش', sub: 'ZainCash' },
+          { name: 'سوبر كي', sub: 'SuperQi' },
+          { name: 'آسيا باي', sub: 'AsiaPay' },
+          { name: 'العراق الأول', sub: 'FIB' }
+        ] },
+      { id: 'eg', name: 'مصر', cur: 'ج.م', wa: '201515812919', shown: '+20 151 581 2919', rate: 53.44, step: 10, active: true, pay: [] },
+      // السودان مخفي لحد ما تجهز رقمه وسعر الصرف: غيّر active إلى true وعبّي الحقول
+      { id: 'sd', name: 'السودان', cur: 'ج.س', wa: '', shown: '', rate: null, step: 1, active: false, pay: [] }
+    ]
+  };
+
+  var PACKAGES = [
+    { id: 1, name: 'صفحة واحدة', sub: 'مناسبة للمحلات والمشاريع الجديدة', usd: 20, featured: false,
+      features: ['صفحة هبوط واحدة بتصميم عصري', 'متجاوبة مع الموبايل', 'استقبال الطلبات عبر واتساب برسالة جاهزة ومرتبة', 'روابط حساباتك على السوشيال ميديا', 'نشر الموقع على رابط جاهز للمشاركة', 'جولتا تعديل على التصميم بعد التسليم'],
+      note: 'تواصل معنا، ونصمّم لك صفحتك كما تتخيّلها، بأسلوب أنيق يعكس هوية مشروعك.' },
+    { id: 2, name: 'موقع متكامل', sub: 'للمشاريع اللي تحتاج عرض منتجات أو خدمات', usd: 35, featured: true,
+      features: ['كل مميزات صفحة واحدة', 'عدة صفحات (الرئيسية، الخدمات، من نحن، تواصل)', 'متجر بسيط مع إضافة وتعديل المنتجات بسهولة', 'استقبال الطلبات: توصلك مباشرة على واتساب', 'نموذج تواصل وخريطة الموقع', 'المساعدة بربط دومين خاص (سعر الدومين منفصل)', 'ثلاث جولات تعديل على التصميم بعد التسليم'],
+      note: 'شاركنا فكرتك، ونحوّلها إلى موقع متكامل يحمل طابع مشروعك ويليق بعملائك.' },
+    { id: 3, name: 'موقع احترافي', sub: 'للمشاريع اللي تريد حضور رقمي كامل', usd: 50, featured: false,
+      features: ['كل مميزات الموقع المتكامل', 'صفحات أكثر وتصميم مخصص بهوية مشروعك', 'متجر كامل مع سلة طلبات وتصنيف للمنتجات', 'الطلبات توصلك مرتبة (المنتجات، الكميات، بيانات الزبون)', 'لوحة بسيطة لإضافة المنتجات وتعديل الأسعار بسهولة', 'ربط دومين خاص باسم مشروعك (سعر الدومين منفصل)', 'تحسين أساسي لظهور الموقع بمحركات البحث', 'دعم ومتابعة بعد التسليم مع خمس جولات تعديل'],
+      note: 'راسلنا بما تتصوّره، ونصمّم لك تجربة رقمية فريدة بتفاصيل تليق بمشروعك.' }
+  ];
+
+  var COLORS = [
+    { name: 'كحلي', hex: '#1C2452' }, { name: 'تركوازي', hex: '#2FA88F' }, { name: 'أحمر', hex: '#C8473D' },
+    { name: 'برتقالي', hex: '#E08A2E' }, { name: 'بنفسجي', hex: '#6B4FB3' }, { name: 'أسود', hex: '#1A1A1A' }
+  ];
+  var BIZ_TYPES = ['مطعم', 'كافيه', 'صيدلية', 'عيادة', 'محل', 'مكتب أو شركة', 'غير ذلك'];
+  var EXTRAS = [
+    { id: 'page', label: 'صفحة إضافية', usd: 5 },
+    { id: 'lang', label: 'لغة ثانية للموقع', usd: 5 },
+    { id: 'copy', label: 'كتابة المحتوى والنصوص', usd: 5 }
+  ];
+
+  /* ============ الحالة ============ */
+  var state = { country: 'iq', pkg: 0, bizType: '', color: 0, extras: {}, biz: '', addr: '', person: '', phone: '', note: '' };
+  try {
+    var saved = localStorage.getItem('webly-country');
+    if (saved && CONFIG.countries.some(function (c) { return c.id === saved && c.active; })) state.country = saved;
+  } catch (e) {}
+
+  var CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]; }); };
+
+  function cur() { return CONFIG.countries.filter(function (c) { return c.id === state.country; })[0] || CONFIG.countries[0]; }
+  function pkgById(id) { return PACKAGES.filter(function (p) { return p.id === id; })[0] || null; }
+  function localPrice(usd) {
+    var c = cur();
+    if (!c.rate) return '';
+    return (Math.round(usd * c.rate / c.step) * c.step).toLocaleString('en-US');
+  }
+  function waLink(text) {
+    return 'https://wa.me/' + cur().wa + (text ? '?text=' + encodeURIComponent(text) : '');
+  }
+  function chosenExtras() { return EXTRAS.filter(function (e) { return state.extras[e.id]; }); }
+  function totalUsd() {
+    var p = pkgById(state.pkg);
+    return p ? p.usd + chosenExtras().reduce(function (a, e) { return a + e.usd; }, 0) : 0;
+  }
+  function dash(v) { return (v && String(v).trim()) || 'لم يُذكر'; }
+
+  function orderText() {
+    var p = pkgById(state.pkg), c = cur(), ex = chosenExtras(), total = totalUsd(), lp = localPrice(total);
+    if (!p) return '';
+    return [
+      'طلب جديد من موقع Webly',
+      'الدولة: ' + c.name,
+      'الباقة: ' + p.name + ' ($' + p.usd + ')',
+      'الإضافات: ' + (ex.length ? ex.map(function (e) { return e.label; }).join('، ') : 'بدون'),
+      'الإجمالي: $' + total + (lp ? ' (≈ ' + lp + ' ' + c.cur + ')' : ''),
+      'اسم المشروع: ' + dash(state.biz),
+      'نوع النشاط: ' + dash(state.bizType),
+      'لون الموقع: ' + COLORS[state.color].name,
+      'العنوان: ' + dash(state.addr),
+      'الاسم: ' + dash(state.person),
+      'رقم التواصل: ' + dash(state.phone),
+      'ملاحظات: ' + dash(state.note)
+    ].join('\n');
+  }
+
+  // حفظ الطلب في Google Sheet (يشتغل فقط إذا انحط sheetUrl)
+  function saveToSheet() {
+    if (!CONFIG.sheetUrl) return;
+    var p = pkgById(state.pkg);
+    var data = {
+      country: cur().name, package: p ? p.name : '', usd: totalUsd(),
+      extras: chosenExtras().map(function (e) { return e.label; }).join('، '),
+      business: state.biz, type: state.bizType, color: COLORS[state.color].name,
+      address: state.addr, name: state.person, phone: state.phone, notes: state.note
+    };
+    try {
+      fetch(CONFIG.sheetUrl, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) }).catch(function () {});
+    } catch (e) {}
+  }
+
+  /* ============ الرسم ============ */
+  function renderSwitches() {
+    var html = CONFIG.countries.filter(function (c) { return c.active; }).map(function (c) {
+      return '<button type="button" data-country="' + c.id + '" aria-pressed="' + (c.id === state.country) + '">' + esc(c.name) + '</button>';
+    }).join('');
+    $$('.js-switch').forEach(function (el) { el.innerHTML = html; });
+  }
+
+  function renderCards() {
+    var c = cur();
+    $('#cards').innerHTML = PACKAGES.map(function (p) {
+      var lp = localPrice(p.usd);
+      return '<article class="card' + (p.featured ? ' featured' : '') + '">' +
+        (p.featured ? '<span class="badge">موصى بها</span>' : '') +
+        '<div class="stack" style="gap:4px"><h3>' + p.name + '</h3><p class="sub">' + p.sub + '</p></div>' +
+        '<div class="price"><span class="usd" dir="ltr">$' + p.usd + '</span>' + (lp ? '<span class="local">≈ ' + lp + ' ' + c.cur + '</span>' : '') + '</div>' +
+        '<ul class="feat">' + p.features.map(function (f) { return '<li>' + CHECK + '<span>' + f + '</span></li>'; }).join('') + '</ul>' +
+        '<p class="note">' + p.note + '</p>' +
+        '<button type="button" class="btn ' + (p.featured ? 'btn-primary' : 'btn-outline') + '" data-pick="' + p.id + '">اطلب هذه الباقة</button>' +
+        '</article>';
+    }).join('');
+  }
+
+  function renderPay() {
+    var c = cur();
+    if (!c.pay.length) {
+      $('#pay-body').innerHTML = '<p class="lead" style="color:var(--navy)">نحدّد وسائل الدفع المتاحة في بلدك عند التواصل معنا.</p>';
+      return;
+    }
+    $('#pay-body').innerHTML = c.pay.map(function (m) {
+      return '<div class="pay-card"><span class="pay-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg></span>' +
+        '<div><strong>' + esc(m.name) + '</strong><span dir="ltr">' + esc(m.sub) + '</span></div></div>';
+    }).join('');
+  }
+
+  function orderShell() {
+    return '<div class="stack"><h2 id="order-title" tabindex="-1">خصّص طلبك</h2><p class="lead">عبّي التفاصيل، وأرسل الطلب لنا عبر واتساب.</p></div>' +
+      '<div class="order-grid">' +
+      '<form class="panel" autocomplete="off" onsubmit="return false">' +
+        '<div class="field"><span class="label">الباقة</span><div class="chips">' +
+          PACKAGES.map(function (p) { return '<button type="button" class="chip pk" data-act="pkg" data-val="' + p.id + '" aria-pressed="false">' + p.name + ' <span dir="ltr">$' + p.usd + '</span></button>'; }).join('') +
+        '</div></div>' +
+        '<div class="field"><label class="label" for="f-biz">اسم المشروع</label><input id="f-biz" data-field="biz" type="text" placeholder="مثال: مطعم الريف" value="' + esc(state.biz) + '"></div>' +
+        '<div class="field"><span class="label">نوع النشاط</span><div class="chips">' +
+          BIZ_TYPES.map(function (t) { return '<button type="button" class="chip" data-act="biz" data-val="' + esc(t) + '" aria-pressed="false">' + t + '</button>'; }).join('') +
+        '</div></div>' +
+        '<div class="field"><span class="label">لون الموقع: <small id="color-name"></small></span><div class="swatches">' +
+          COLORS.map(function (c, i) { return '<button type="button" class="sw" data-act="color" data-val="' + i + '" aria-label="' + c.name + '" aria-pressed="false" style="background:' + c.hex + '"></button>'; }).join('') +
+        '</div></div>' +
+        '<div class="field"><label class="label" for="f-addr">عنوان المشروع</label><input id="f-addr" data-field="addr" type="text" placeholder="المدينة والمنطقة" value="' + esc(state.addr) + '"></div>' +
+        '<div class="field"><span class="label">إضافات (اختياري)</span><div class="chips">' +
+          EXTRAS.map(function (e) { return '<button type="button" class="chip" data-act="extra" data-val="' + e.id + '" aria-pressed="false">' + e.label + ' <span class="pr" dir="ltr">+$' + e.usd + '</span></button>'; }).join('') +
+        '</div></div>' +
+        '<div class="field"><label class="label" for="f-person">اسمك</label><input id="f-person" data-field="person" type="text" value="' + esc(state.person) + '"></div>' +
+        '<div class="field"><label class="label" for="f-phone">رقم التواصل</label><input id="f-phone" data-field="phone" type="tel" dir="ltr" style="text-align:right" placeholder="07XXXXXXXXX" value="' + esc(state.phone) + '"></div>' +
+        '<div class="field"><label class="label" for="f-note">ملاحظات</label><textarea id="f-note" data-field="note" rows="3" placeholder="أي تفاصيل ثانية تحب نعرفها">' + esc(state.note) + '</textarea></div>' +
+      '</form>' +
+      '<aside class="summary" id="sum"></aside>' +
+      '</div>';
+  }
+
+  function renderSummary() {
+    var p = pkgById(state.pkg), c = cur();
+    if (!p) return;
+    var ex = chosenExtras(), total = totalUsd(), lp = localPrice(total);
+    var lines = [{ label: p.name, value: '$' + p.usd }].concat(ex.map(function (e) { return { label: e.label, value: '+$' + e.usd }; }));
+    $('#sum').innerHTML =
+      '<div class="stack" style="gap:4px"><span class="k">الباقة المختارة</span><h3>' + p.name + '</h3></div>' +
+      '<div class="stack" style="gap:10px"><strong style="font-size:15px">ما تشمله الباقة</strong><ul class="sum-feat">' +
+        p.features.map(function (f) { return '<li>' + CHECK + '<span>' + f + '</span></li>'; }).join('') + '</ul></div>' +
+      '<div class="lines">' + lines.map(function (l) { return '<div class="line"><span>' + l.label + '</span><span dir="ltr">' + l.value + '</span></div>'; }).join('') +
+        '<div class="total"><b>الإجمالي</b><div class="amt"><strong dir="ltr">$' + total + '</strong>' + (lp ? '<span>≈ ' + lp + ' ' + c.cur + '</span>' : '') + '</div></div></div>' +
+      '<a class="btn btn-primary btn-lg js-order-wa" href="' + esc(waLink(orderText())) + '" target="_blank" rel="noopener">' +
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg><span>أرسل الطلب عبر واتساب</span></a>';
+  }
+
+  function updateOrderUI() {
+    $$('#order [data-act]').forEach(function (b) {
+      var v = b.getAttribute('data-val'), on = false;
+      switch (b.getAttribute('data-act')) {
+        case 'pkg': on = String(state.pkg) === v; break;
+        case 'biz': on = state.bizType === v; break;
+        case 'color': on = String(state.color) === v; break;
+        case 'extra': on = !!state.extras[v]; break;
+      }
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    var cn = $('#color-name');
+    if (cn) cn.textContent = COLORS[state.color].name;
+    renderSummary();
+  }
+
+  function applyCountry() {
+    var c = cur();
+    renderSwitches();
+    renderCards();
+    renderPay();
+    $$('.js-wa').forEach(function (a) { a.setAttribute('href', waLink()); });
+    $('#foot-wa').textContent = c.shown;
+    if (state.pkg) updateOrderUI();
+    try { localStorage.setItem('webly-country', state.country); } catch (e) {}
+  }
+
+  function openOrder(id) {
+    state.pkg = id;
+    var sec = $('#order');
+    if (sec.hasAttribute('hidden')) {
+      sec.removeAttribute('hidden');
+      $('#order-body').innerHTML = orderShell();
+    }
+    updateOrderUI();
+    sec.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    var h = $('#order-title');
+    if (h) h.focus({ preventScroll: true });
+  }
+
+  /* ============ الأحداث ============ */
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var cb = t.closest('[data-country]');
+    if (cb) { state.country = cb.getAttribute('data-country'); applyCountry(); return; }
+    var pk = t.closest('[data-pick]');
+    if (pk) { openOrder(Number(pk.getAttribute('data-pick'))); return; }
+    var act = t.closest('[data-act]');
+    if (act) {
+      var v = act.getAttribute('data-val');
+      switch (act.getAttribute('data-act')) {
+        case 'pkg': state.pkg = Number(v); break;
+        case 'biz': state.bizType = (state.bizType === v ? '' : v); break;
+        case 'color': state.color = Number(v); break;
+        case 'extra': state.extras[v] = !state.extras[v]; break;
+      }
+      updateOrderUI();
+      return;
+    }
+    if (t.closest('.js-order-wa')) saveToSheet();
+  });
+
+  document.addEventListener('input', function (e) {
+    var f = e.target.getAttribute && e.target.getAttribute('data-field');
+    if (f) { state[f] = e.target.value; renderSummary(); }
+  });
+
+  applyCountry();
+})();
+</script>
+</body>
+</html>
